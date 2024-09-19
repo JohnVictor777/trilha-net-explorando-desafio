@@ -13,13 +13,26 @@ hospedes.Add(p1);
 hospedes.Add(p2);
 
 // Cria a suíte
+
 Suite suite = new Suite(tipoSuite: "Premium", capacidade: 2, valorDiaria: 30);
 
+
 // Cria uma nova reserva, passando a suíte e os hóspedes
-Reserva reserva = new Reserva(diasReservados: 5);
+Console.WriteLine("----- HOTEL VIVA A VIDA -----");
+Console.WriteLine("");
+
+Console.Write("=> Adicione os dias que foram reservados: ");
+
+Reserva reserva = new Reserva(diasReservados: Convert.ToInt32(Console.ReadLine()));
+Console.Clear();
+
+Console.WriteLine("----- HOTEL VIVA A VIDA -----");
+Console.WriteLine("");
+
 reserva.CadastrarSuite(suite);
 reserva.CadastrarHospedes(hospedes);
 
 // Exibe a quantidade de hóspedes e o valor da diária
-Console.WriteLine($"Hóspedes: {reserva.ObterQuantidadeHospedes()}");
-Console.WriteLine($"Valor diária: {reserva.CalcularValorDiaria()}");
+Console.WriteLine($"=> Hóspedes: {reserva.ObterQuantidadeHospedes()}");
+Console.WriteLine($"=> Valor diária: {reserva.CalcularValorDiaria()}");
+
